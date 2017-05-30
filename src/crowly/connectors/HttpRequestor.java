@@ -52,7 +52,7 @@ public class HttpRequestor implements IConstants
             StringEntity reqEntity = new StringEntity(pPayload);
             request.setEntity(reqEntity);
             
-            HttpResponse response = httpclient.execute(request); //System.out.println(response.getEntity().toString());
+            HttpResponse response = httpclient.execute(request); 
             HttpEntity entity = response.getEntity(); 
                                               
             if (entity != null) 

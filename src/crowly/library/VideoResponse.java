@@ -1,11 +1,23 @@
 package crowly.library;
 
+import java.util.Date;
+
 public class VideoResponse 
 {
 	private String VideoResponseURL;
 	private String VideoKey;
 	private String Content;
 	private boolean Procesado;
+	private Date VideoDate;
+	
+	public VideoResponse(String pURL, String pKey, String pContent, Date pVideoDate)
+	{
+		VideoResponseURL = pURL;
+		VideoKey = pKey;
+		Content = pContent;
+		Procesado = false;
+		VideoDate = pVideoDate;
+	}
 	
 	public VideoResponse(String pURL, String pKey, String pContent)
 	{
@@ -13,6 +25,14 @@ public class VideoResponse
 		VideoKey = pKey;
 		Content = pContent;
 		Procesado = false;
+	}
+
+	public Date getVideoDate() {
+		return VideoDate;
+	}
+
+	public void setVideoDate(Date videoDate) {
+		VideoDate = videoDate;
 	}
 
 	public String getVideoResponseURL() {

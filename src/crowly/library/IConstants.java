@@ -1,8 +1,11 @@
 package crowly.library;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import crowly.utils.*;
 
-public interface IConstants 
+public interface IConstants
 {
 	public final String POST_BODY = "{ \"url\":\"@@URL@@\" }";
 	
@@ -23,12 +26,15 @@ public interface IConstants
 			"https://www.dropbox.com/s/nhc9xsxlnsn0bv8/WIN_20170503_15_26_09_Pro.mp4?dl=0"
 			*/			
 	}; 
+
 	
+	public final String[] LISTA_VIDEO_JSON = {
+			"/home/yuberth/workspace/Crowly/2017-05-29T06:17:26.5994608Z.json"
+	};
+	public ArrayList<VideoInfo> VIDEOS_LIST = new ArrayList<VideoInfo>();
 	public ArrayList<String> LISTA_VIDEOS_GUI = new ArrayList<String>();
 	public ArrayList<String> LISTA_VIDEOS_JSON = new ArrayList<String>();
 	
-	//,"https://drive.google.com/file/d/0BwJxloOUZR3oM3l2TUU5UWhRNjA/view?usp=sharing"
-	//"https://www.dropbox.com/s/nhc9xsxlnsn0bv8/WIN_20170503_15_26_09_Pro.mp4?dl=0"
 	
 	public final String LOCATION_RESULT_URL_KEY = "Operation-Location";
 	public final String LOCATION_RESULT_ACCESS_KEY = "apim-request-id";
@@ -37,4 +43,7 @@ public interface IConstants
 	public final int ESPERA_ENTRE_LLAMADAS = 60000;
 	
 	public final String MCS_IDKEY = "895369e4d9724c66b1e75326fcfe50e9"; // 799dca11f3ca4e67b75c9aa34848823b
+	
+	public final String UTF_CENTRAL_AMERICA = "-0600";
+	public final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ssZ";
 }

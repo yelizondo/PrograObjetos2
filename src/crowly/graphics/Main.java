@@ -6,7 +6,7 @@ public class Main
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		AbstractCreator creator = new CreatorID();
-		
+		we
 		IGraphic line = creator.create(AbstractCreator.LINE_ID);
 		line.Graficar();
 		
