@@ -5,10 +5,15 @@ import javax.swing.JFrame;
 
 import crowly.library.IConstants;
 import crowly.program.VideoProcessor;
+import crowly.graphics.*;
 
 public class Window extends JFrame implements IConstants
 {
 	VideoProcessor proc;
+	AbstractCreator cre; 
+	IGraphic scatterChart;
+	IGraphic barChart;
+	IGraphic lineChart; 
 	
     public Window() {
         initComponents();
@@ -40,6 +45,11 @@ public class Window extends JFrame implements IConstants
         Cargar = new javax.swing.JButton();
         proc = new VideoProcessor();
         fileChooser = new javax.swing.JFileChooser();
+        cre = new CreatorForName();
+    	scatterChart = cre.createForName(AbstractCreator.SCATTER);
+    	barChart = cre.createForName(AbstractCreator.BAR);
+    	lineChart = cre.createForName(AbstractCreator.LINE);
+    	graficados = false;
         
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,14 +66,24 @@ public class Window extends JFrame implements IConstants
         ScatterChart.setText("Scatter Chart");
         ScatterChart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ScatterChartActionPerformed(evt);
+                try {
+					ScatterChartActionPerformed(evt);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
 
         LineChart.setText("Line Chart");
         LineChart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LineChartActionPerformed(evt);
+                try {
+					LineChartActionPerformed(evt);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
 
@@ -305,13 +325,23 @@ public class Window extends JFrame implements IConstants
         CargarVideos.setVisible(false);
     }//GEN-LAST:event_IrInicioDesdeCargarActionPerformed
 
-    private void ScatterChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScatterChartActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ScatterChartActionPerformed
+    private void ScatterChartActionPerformed(java.awt.event.ActionEvent evt) throws Exception 
+    {
+    	if (graficados)
+    	{
+    		scatterChart.getCuerpos(proc.getCuerpos());
+    		scatterChart.Graficar();
+    	}
+    }
 
-    private void LineChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LineChartActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LineChartActionPerformed
+    private void LineChartActionPerformed(java.awt.event.ActionEvent evt) throws Exception 
+    {
+    	if (graficados)
+    	{
+    		lineChart.getCuerpos(proc.getCuerpos());
+    		lineChart.Graficar();
+    	}
+    }
 
     private void BarChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BarChartActionPerformed
         // TODO add your handling code here:
@@ -348,9 +378,11 @@ public class Window extends JFrame implements IConstants
     	
     }
 
-    private void GraficarVideosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraficarVideosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GraficarVideosActionPerformed
+    private void GraficarVideosActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        proc.procesarVideos();
+        graficados = true;
+    }
 
 
     public static void main(String args[]) 
@@ -376,7 +408,7 @@ public class Window extends JFrame implements IConstants
         java.awt.EventQueue.invokeLater(new Runnable() 
         {
             public void run() {
-                //new Window().setVisible(true);
+                new Window().setVisible(true);
             }
         });
     }
@@ -402,4 +434,5 @@ public class Window extends JFrame implements IConstants
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JFileChooser fileChooser;
+    private boolean graficados;
 }

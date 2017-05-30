@@ -61,5 +61,7 @@ public interface IConstants
 	public final int DAY_END = 86399;
 	
 	public final String SCATTER_PATH = "/home/yuberth/workspace/Crowly/graphics/scatter.html";
-	public final String SCATTER_GRAPHIC_ARRAY = "#ARRAY#";
+	public final String LINE_PATH = "/home/yuberth/workspace/Crowly/graphics/line.html";
+	public final String BAR_PATH = "/home/yuberth/workspace/Crowly/graphics/bar.html";
+	public final String GRAPHIC_ARRAY = "#ARRAY#";
 }

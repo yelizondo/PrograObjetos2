@@ -17,11 +17,7 @@ public class Scatter implements IGraphic, IConstants
 	
 	@Override
 	public void Graficar() throws Exception 
-	{
-		cantidadCuerpos[0] = 1;
-		cantidadCuerpos[1] = 1;
-		cantidadCuerpos[2] = 1;
-		
+	{		
 		fillGraphics();
 		
 		File htmlFile = new File(SCATTER_PATH);
@@ -45,7 +41,7 @@ public class Scatter implements IGraphic, IConstants
 			} 
 			else if (cuerpoTime > AFTERNOON_FOUR && cuerpoTime <= DAY_END)
 			{
-				cantidadCuerpos[2] += 2;
+				cantidadCuerpos[2] += 1; System.out.println("tarde");
 			}
 		}
 	}
@@ -55,10 +51,10 @@ public class Scatter implements IGraphic, IConstants
 	{
 		String first = String.valueOf(cantidadCuerpos[0]);
 		String second = String.valueOf(cantidadCuerpos[1]);
-		String third = String.valueOf(cantidadCuerpos[2]);
+		String third = String.valueOf(cantidadCuerpos[2]); System.out.println(third);
 				
 		String array = new String("[" + first + "," + second + "," + third + "]");
 		
-		Processor.replaceInFile(SCATTER_PATH, SCATTER_GRAPHIC_ARRAY , array);
+		Processor.replaceInFile(SCATTER_PATH, GRAPHIC_ARRAY , array);
 	}
 }
