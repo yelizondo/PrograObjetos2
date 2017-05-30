@@ -1,10 +1,14 @@
 package crowly.gui;
 
+import java.text.ParseException;
+
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 
 import crowly.library.IConstants;
+import crowly.library.VideoInfo;
 import crowly.program.VideoProcessor;
+import crowly.utils.DateParser;
 import crowly.graphics.*;
 
 public class Window extends JFrame implements IConstants
@@ -90,7 +94,12 @@ public class Window extends JFrame implements IConstants
         BarChart.setText("Bar Chart");
         BarChart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BarChartActionPerformed(evt);
+                try {
+					BarChartActionPerformed(evt);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
 
@@ -164,12 +173,17 @@ public class Window extends JFrame implements IConstants
             }
         });
 
-        jLabel1.setText("Digite el URL del video por procesar:");
+        jLabel1.setText("Anadir video: www.example.com@HH:MM:SS");
 
         Anadir.setText("Añadir");
         Anadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AnadirActionPerformed(evt);
+                try {
+					AnadirActionPerformed(evt);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
 
@@ -343,17 +357,33 @@ public class Window extends JFrame implements IConstants
     	}
     }
 
-    private void BarChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BarChartActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BarChartActionPerformed
+    private void BarChartActionPerformed(java.awt.event.ActionEvent evt) throws Exception 
+    {
+    	if (graficados)
+    	{
+    		barChart.getCuerpos(proc.getCuerpos());
+    		barChart.Graficar();
+    	}
+    }
 
     private void URLPorProcesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_URLPorProcesarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_URLPorProcesarActionPerformed
 
-    private void AnadirActionPerformed(java.awt.event.ActionEvent evt) 
+    private void AnadirActionPerformed(java.awt.event.ActionEvent evt) throws Exception 
     {    
-    	LISTA_VIDEOS_GUI.add(this.URLPorProcesar.getText());
+    	String input = this.URLPorProcesar.getText();
+    	String[] s = input.split("@");    
+    	
+    	String fecha = "2000-01-01T" + s[1];
+    	
+    
+    	
+    	VIDEOS_LIST.add(new VideoInfo(DateParser.dateParser(fecha), s[0]));
+    	
+    	System.out.println(VIDEOS_LIST.get(0).getVideoDate().toString());
+    	
+    	//LISTA_VIDEOS_GUI.add(this.URLPorProcesar.getText());
     	URLPorProcesar.setText("");   	
     }
 

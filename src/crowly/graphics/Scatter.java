@@ -51,7 +51,7 @@ public class Scatter implements IGraphic, IConstants
 	{
 		String first = String.valueOf(cantidadCuerpos[0]);
 		String second = String.valueOf(cantidadCuerpos[1]);
-		String third = String.valueOf(cantidadCuerpos[2]); System.out.println(third);
+		String third = String.valueOf(cantidadCuerpos[2]); 
 				
 		String array = new String("[" + first + "," + second + "," + third + "]");
 		
