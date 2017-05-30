@@ -11,4 +11,9 @@ public class DateParser implements IConstants
 	{
 		return new SimpleDateFormat(DATE_FORMAT).parse(pDate + UTF_CENTRAL_AMERICA);
 	}
+	
+	public static int toSeconds(int pHours, int pMinutes, int pSeconds)
+	{
+		return (pHours * 60 * 60) + (pMinutes * 60) + pSeconds;
+	}
 }

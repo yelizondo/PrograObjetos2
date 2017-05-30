@@ -7,7 +7,6 @@ public class VideoResponse
 	private String VideoResponseURL;
 	private String VideoKey;
 	private String Content;
-	private boolean Procesado;
 	private Date VideoDate;
 	
 	public VideoResponse(String pURL, String pKey, String pContent, Date pVideoDate)
@@ -15,7 +14,6 @@ public class VideoResponse
 		VideoResponseURL = pURL;
 		VideoKey = pKey;
 		Content = pContent;
-		Procesado = false;
 		VideoDate = pVideoDate;
 	}
 	
@@ -23,8 +21,7 @@ public class VideoResponse
 	{
 		VideoResponseURL = pURL;
 		VideoKey = pKey;
-		Content = pContent;
-		Procesado = false;
+		Content = pContent;;
 	}
 
 	public Date getVideoDate() {
@@ -49,14 +46,6 @@ public class VideoResponse
 
 	public void setVideoKey(String videoKey) {
 		VideoKey = videoKey;
-	}
-
-	public boolean isProcesado() {
-		return Procesado;
-	}
-
-	public void setProcesado(boolean procesado) {
-		Procesado = procesado;
 	}
 
 	public String getContent() {

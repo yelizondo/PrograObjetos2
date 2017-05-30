@@ -8,8 +8,6 @@ import crowly.program.VideoProcessor;
 
 public class Window extends JFrame implements IConstants
 {
-
-	
 	VideoProcessor proc;
 	
     public Window() {

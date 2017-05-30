@@ -54,4 +54,12 @@ public interface IConstants
 	public final String JSON_COMPONENT_DURATION = "duration";
 	public final String JSON_COMPONENT_FRAMERATE = "framerate";
 	public final int SECOND_IN_MILISECONDS = 1000;
+	
+	public final int MIDNIGHT = 0;
+	public final int MIDDAY = 39600;
+	public final int AFTERNOON_FOUR = 57600;
+	public final int DAY_END = 86399;
+	
+	public final String SCATTER_PATH = "/home/yuberth/workspace/Crowly/graphics/scatter.html";
+	public final String SCATTER_GRAPHIC_ARRAY = "#ARRAY#";
 }

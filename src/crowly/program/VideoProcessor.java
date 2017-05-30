@@ -57,7 +57,7 @@ public class VideoProcessor implements IConstants
 	{
 		return MsClient.getCuerpos();
 	}
-	
+	/*
 	@SuppressWarnings("deprecation")
 	public static void main(String args[]) throws ParseException
 	{
@@ -72,5 +72,5 @@ public class VideoProcessor implements IConstants
 		
 		
 
-	}
+	}*/
 }

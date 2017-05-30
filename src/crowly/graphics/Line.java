@@ -1,10 +1,31 @@
 package crowly.graphics;
 
-public class Line implements IGraphic
+import java.util.ArrayList;
+
+import crowly.library.Cuerpo;
+import crowly.library.IConstants;
+import crowly.utils.FileProcessor;
+
+public class Line implements IGraphic, IConstants
 {
+	private FileProcessor Processor = new FileProcessor();
+	
 	@Override
 	public void Graficar() 
-	{
-		System.out.println("Graficando Line");		
+	{	
+		fillGraphics();
+	}
+
+
+	@Override
+	public void getCuerpos(ArrayList<Cuerpo> pCuerpos) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void fillGraphics() {
+		// TODO Auto-generated method stub
+		
 	}
 }
