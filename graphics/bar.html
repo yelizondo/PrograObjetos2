@@ -5,12 +5,12 @@
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
 
-      var personas = [5,11,4];
+      var personas = #ARRAY#;
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
 	  ['Horario', 'Personas'],
-          [ "Ma�ana",      null],
+          [ "Manana",      null],
           [ "total",      personas[0]],
           [ "Medio dia",     null],
           [ "Total",      personas[1]],
@@ -20,8 +20,7 @@
 
         var options = {
           chart: {
-            title: 'Company Performance',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+            title: 'Personas por horario',
           },
           bars: 'horizontal' // Required for Material Bar Charts.
         };
