@@ -7,8 +7,7 @@ import crowly.utils.*;
 
 public interface IConstants
 {
-	public final String POST_BODY = "{ \"url\":\"@@URL@@\" }";
-	
+	public final String POST_BODY = "{ \"url\":\"@@URL@@\" }";	
 	public final String MCS_URL = "https://westus.api.cognitive.microsoft.com/video/v1.0/detectmotion?sensitivityLevel=low&frameSamplingValue=1";
 		
 	public ArrayList<VideoInfo> VIDEOS_LIST = new ArrayList<VideoInfo>();

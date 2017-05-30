@@ -46,7 +46,7 @@ public class HttpRequestor implements IConstants
             URI uri = builder.build();
             HttpPost request = new HttpPost(uri);
             request.setHeader("Content-Type", "application/json");
-            request.setHeader("Ocp-Apim-Subscription-Key", pMSKey); System.out.println(builder.toString());
+            request.setHeader("Ocp-Apim-Subscription-Key", pMSKey); 
 
             // Request body
             StringEntity reqEntity = new StringEntity(pPayload);
@@ -59,21 +59,18 @@ public class HttpRequestor implements IConstants
             {           	
                 String location = response.getHeaders(LOCATION_RESULT_URL_KEY).length > 0 ? response.getHeaders(LOCATION_RESULT_URL_KEY)[0].getValue() : "";
                 String key = response.getHeaders(LOCATION_RESULT_URL_KEY).length > 0 ? response.getHeaders(LOCATION_RESULT_ACCESS_KEY)[0].getValue() : "";            	
-                result = new VideoResponse(location, key, EntityUtils.toString(entity)); 
-                System.out.println(result.getVideoResponseURL() + "\n" + result.getVideoKey() + "\n" + result.getContent());
+                result = new VideoResponse(location, key, EntityUtils.toString(entity));           
             }
         }
         catch (Exception e)
         {
-            System.out.println(e.getMessage());
-        }
-        
+            e.printStackTrace();
+        }       
 		return result;
 	}
 	
 	public static VideoResponse get(VideoResponse pVideoResponse, String pMSKey)
-	{
-		
+	{		
 		HttpClient httpclient = HttpClients.createDefault();
         try
         {
@@ -84,7 +81,7 @@ public class HttpRequestor implements IConstants
             request.setHeader("Content-Type", "application/json");
             request.setHeader("Ocp-Apim-Subscription-Key", pMSKey);
 
-            HttpResponse response = httpclient.execute(request); System.out.println(response.toString());
+            HttpResponse response = httpclient.execute(request);
             HttpEntity entity = response.getEntity();
                                                 
             if (entity != null) 
@@ -94,7 +91,7 @@ public class HttpRequestor implements IConstants
         }
         catch (Exception e)
         {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
 		return pVideoResponse;
 	}

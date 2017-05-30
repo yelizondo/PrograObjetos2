@@ -41,7 +41,7 @@ public class Scatter implements IGraphic, IConstants
 			} 
 			else if (cuerpoTime > AFTERNOON_FOUR && cuerpoTime <= DAY_END)
 			{
-				cantidadCuerpos[2] += 1; System.out.println("tarde");
+				cantidadCuerpos[2] += 1;
 			}
 		}
 	}
