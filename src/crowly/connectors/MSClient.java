@@ -59,17 +59,13 @@ public class MSClient implements IConstants
 			JSONParser parser = new JSONParser();
 			JSONObject json = (JSONObject) parser.parse(response.getContent());
 			
-			String name = response.getVideoDate().toString();
-			
+			String name = response.getVideoDate().toString();			
 			String content = (String) json.get("processingResult");
-			
-			
-			
-			
-			
+
 			JSONObject jsonRemastered = (JSONObject) parser.parse(content);
 			jsonRemastered.put("framerate", name);
 			String newContent = jsonRemastered.toJSONString();
+			newContent.replaceAll("framerate", "videoCreationTime");
 			
 			PrintWriter writer = new PrintWriter(name + ".json");
 			

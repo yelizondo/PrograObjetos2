@@ -29,7 +29,7 @@ public interface IConstants
 
 	
 	public final String[] LISTA_VIDEO_JSON = {
-			"/home/yuberth/workspace/Crowly/2017-05-29T06:17:26.5994608Z.json"
+			"/home/yuberth/workspace/Crowly/Mon May 29 17:45:10 CST 2017.json"
 	};
 	public ArrayList<VideoInfo> VIDEOS_LIST = new ArrayList<VideoInfo>();
 	public ArrayList<String> LISTA_VIDEOS_GUI = new ArrayList<String>();

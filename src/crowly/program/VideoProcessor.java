@@ -40,13 +40,18 @@ public class VideoProcessor implements IConstants
 			{
 				MsClient.procesarRespuestaVideo(video);
 				Thread.sleep(ESPERA_ENTRE_LLAMADAS);
-			}			
-			CuerposTodosLosVideos = MsClient.getCuerpos();
+			}		
+		
 		} 
 		catch (Exception ex)
 		{
 			ex.printStackTrace();
 		}
+	}
+	
+	public void procesarVideos()
+	{
+		MsClient.cargarCuerpos();
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -58,10 +63,8 @@ public class VideoProcessor implements IConstants
 		VIDEOS_LIST.add(new VideoInfo(DateParser.dateParser("2017-05-29T17:45:10"), "https://dl.dropboxusercontent.com/s/ujlqg46p04xezb3/videouno.mp4?dl=0"));
 		
 		VideoProcessor proc = new VideoProcessor();
-		proc.analizarVideos();
-		
-		
-			
+		//proc.analizarVideos();
+		proc.procesarVideos();
 
 	}
 }
