@@ -46,4 +46,12 @@ public interface IConstants
 	
 	public final String UTF_CENTRAL_AMERICA = "-0600";
 	public final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ssZ";
+	
+	public final String JSON_COMPONENT_FRAGMENTS = "fragments";
+	public final String JSON_COMPONENT_TIMESCALE = "timescale";
+	public final String JSON_COMPONENT_EVENTS = "events";
+	public final String JSON_COMPONENT_START = "start";
+	public final String JSON_COMPONENT_DURATION = "duration";
+	public final String JSON_COMPONENT_FRAMERATE = "framerate";
+	public final int SECOND_IN_MILISECONDS = 1000;
 }

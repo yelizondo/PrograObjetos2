@@ -23,7 +23,7 @@ public class Cuerpo
 		return Time;
 	}
 
-	public void setTime(Date time) {
+	public void setTime(Date time) { 
 		this.Time = Time;
 	}
 

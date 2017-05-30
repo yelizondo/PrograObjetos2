@@ -40,8 +40,7 @@ public class VideoProcessor implements IConstants
 			{
 				MsClient.procesarRespuestaVideo(video);
 				Thread.sleep(ESPERA_ENTRE_LLAMADAS);
-			}		
-		
+			}				
 		} 
 		catch (Exception ex)
 		{
@@ -52,6 +51,11 @@ public class VideoProcessor implements IConstants
 	public void procesarVideos()
 	{
 		MsClient.cargarCuerpos();
+	}
+	
+	public ArrayList<Cuerpo> getCuerpos()
+	{
+		return MsClient.getCuerpos();
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -65,6 +69,8 @@ public class VideoProcessor implements IConstants
 		VideoProcessor proc = new VideoProcessor();
 		//proc.analizarVideos();
 		proc.procesarVideos();
+		
+		
 
 	}
 }

@@ -6,16 +6,6 @@ public class Main
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		AbstractCreator creator = new CreatorID();
-		we
-		IGraphic line = creator.create(AbstractCreator.LINE_ID);
-		line.Graficar();
-		
-		IGraphic bar = creator.create(AbstractCreator.BAR_ID);
-		bar.Graficar();
-		
-		IGraphic scatter = creator.create(AbstractCreator.SCATTER_ID);
-		scatter.Graficar();
-		
 		
 		AbstractCreator cre = new CreatorForName();
 		

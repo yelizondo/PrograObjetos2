@@ -3,13 +3,7 @@ import java.lang.reflect.Method;
 
 public class CreatorForName extends AbstractCreator
 {
-
-	@Override
-	public IGraphic create(int pType) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	@SuppressWarnings("unchecked")
 	@Override
 	public IGraphic createForName(String pType) 
 	{
@@ -17,19 +11,22 @@ public class CreatorForName extends AbstractCreator
 		Object object = null;
 		Method createGraphic;
 
-		try {
+		try 
+		{
 			classe = Class.forName("crowly.graphics."+pType);
-			try {			
+			try 
+			{			
 				object = classe.newInstance();
-				try {
+				try 
+				{
 					createGraphic = classe.getMethod("Graficar", null);
 				}
 				catch(NoSuchMethodException e) {
-					System.out.println("Error al acceder al m�todo. "+ e);
+					System.out.println("Error al acceder al metodo. "+ e);
 				}
 			}
 			catch(IllegalAccessException e) {
-				System.out.println("Error al instanciar el m�todo. "+e);
+				System.out.println("Error al instanciar el metodo. "+e);
 			}
 			catch(InstantiationException e) {
 				System.out.println("No se ha encontrado la clase. "+e);
