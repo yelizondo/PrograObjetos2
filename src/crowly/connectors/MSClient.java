@@ -83,7 +83,7 @@ public class MSClient implements IConstants
 		
 	public void cargarCuerpos()
 	{
-		for (String jsonURL : LISTA_VIDEO_JSON)
+		for (String jsonURL : LISTA_VIDEOS_JSON)
 		{
 			JSONObject jsonObject = processor.parseJSON(jsonURL);
 			
